@@ -23,7 +23,7 @@ public class GameState {
 	public static String[] past = new String[3]; 
 
 	//item pick up booleans
-	public static boolean win = false;
+	public static boolean won = false;
 	public static boolean lost = false;
 
 	

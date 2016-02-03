@@ -34,7 +34,7 @@ public class Survival {
 						command = "quit";
 						break;
 					}
-					else if (choice.equals.("yes")) {
+					else if (choice.equals("yes")) {
 						instantiateWorld();
 						GameState.won = false;
 						welcomeMessage();
@@ -61,7 +61,7 @@ public class Survival {
 						command = "quit";
 						break;
 					}
-					else if (choice.equals.("yes")) {
+					else if (choice.equals("yes")) {
 						instantiateWorld();
 						GameState.won = false;
 						welcomeMessage();

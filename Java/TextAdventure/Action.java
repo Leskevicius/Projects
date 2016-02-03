@@ -29,8 +29,6 @@ public class Action {
 	private boolean used = false;
 	private boolean noPass = false;
 
-
-
 	public Action() {
 		newLocation = GameState.currentLocation;
 	}
