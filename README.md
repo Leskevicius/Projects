@@ -47,4 +47,5 @@
   ```
   java Survival
   ```
+  Make sure to use help command when inside of the game to get the list of available commands!
   
