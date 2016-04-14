@@ -1,4 +1,4 @@
-//MUST HAVE FileIO_w.h 
+//MUST HAVE FileIO_w.h
 
 #ifndef FILESYSTEM_H
 #define FILESYSTEM_H
@@ -12,14 +12,14 @@
 
 #include "FileIO_w.h"
 #include "folders.h"
-#include "time.h"
+#include "Time.h"
 
 
 using namespace std;
 
 //meant to be used in the main menu
 class Users{
-private:	
+private:
 	folders folder;
 	vector<string> userlist; //user1 endl pw1 endl user2 endl pw2 ....
 	FileIO_w users;
@@ -51,7 +51,7 @@ private:
 public:
 	//constructor, implements loadfile_list()
 	Userfiles(string user);
-	
+
 	//creates a new file
 	void newfile(string filename, string text);
 
@@ -102,8 +102,8 @@ void Users::newuser(string username,string password){
 	//must create tablist.txt in that folder
 	string name = username + "/" + "tablist.txt";
 	users.write_emptyfile(name);
-	
-	
+
+
 }
 
 //MUST CALL USERFILES::DELFILEALL BEFORE CALLING THIS
@@ -124,12 +124,12 @@ void Users::deluser(string username){
 		return;
 	}
 	folder.removeFolder(username);
-}	
+}
 
 
 vector<string> Users::printusers(){
 	vector<string> list;
-	for (unsigned int i=0; i<userlist.size(); i++) { 
+	for (unsigned int i=0; i<userlist.size(); i++) {
 		if (i == 0 || i%2 == 0) {
 			list.push_back(userlist.at(i));
 			//cout << userlist.at(i) << endl;
@@ -140,7 +140,7 @@ vector<string> Users::printusers(){
 
 vector<string> Users::printpasswords(){
 	vector<string> list;
-	for (unsigned int i=0; i<userlist.size(); i++) { 
+	for (unsigned int i=0; i<userlist.size(); i++) {
 		if (i%2 == 1) {
 			list.push_back(userlist.at(i));
 			//cout << userlist.at(i) << endl;
@@ -205,14 +205,14 @@ void Userfiles::delfileall(){
 	for (unsigned int i=0; i<filelist.size(); i++){
 		//cout << filelist.at(i) << endl;
 		if (i == 0 || i%2 == 0) {
-			userfiles.delfile(filelist.at(i) + ".txt");	
+			userfiles.delfile(filelist.at(i) + ".txt");
 		}
-		
+
 
 	}
 	filelist.clear();
 	userfiles.writefile(filelist, "tablist.txt");
-	//delete tablist.txt so folder can be deleted. 
+	//delete tablist.txt so folder can be deleted.
 	userfiles.delfile("tablist.txt");
 }
 
@@ -255,25 +255,10 @@ string Userfiles::printfile(string filename){
 			return userfiles.readfile(filename);
 		}
 	}
-	cout << userfiles.readfile(filename) << endl;	
-	return "File not found";	
-	
+	cout << userfiles.readfile(filename) << endl;
+	return "File not found";
+
 }
 
 
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
