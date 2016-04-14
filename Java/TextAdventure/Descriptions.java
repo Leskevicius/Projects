@@ -4,6 +4,7 @@ public class Descriptions {
 	public String[][] descriptions = new String[4][4];
 	public Map<String,String> items;
 	public Map<String,String> sights;
+	public static String help = "Here is an overview of player commands:\ngo <north or south or east or west>       Moves to a different location\ninventory                                 Shows your inventory\nuse <item in inventory>                   Uses an item from inventory\nstats                                     Shows players statistics\nequip                                     Equips an item from inventory\nunequip                                   Unequips an item\ncombine <item1> <item2>                   Combines two items\nhit <npc name>                            Hits designated npc\ndrop <item>                               Drops an item from inventory\nexamine <item or sight>                   Displays informative message about item/sight\ntalk to <npc>                             Talk to designated npc\nget <item>                                Picks up an item from the world\nlook                                      Prints informative message about current location\ncheats <code>                             Remember DOOM? get invincibility if you're old school\nquit                                      Exits the game\n";
 
 
 	public Descriptions(){
@@ -11,7 +12,7 @@ public class Descriptions {
 	}
 
 	public void initializeDescriptions() {
-		
+
 		//map descriptions
 		descriptions[0][0] = "There is an ocean to the north and west of you. As you look around, you see a road leading east and south, a shack, and some bushes.";
 		descriptions[0][1] = "There is an ocean to the west of you. As you look around, you see a road leading south and north, a compound to the east of you with a flag on it, and a drunk guy named Tyler.";
@@ -29,7 +30,7 @@ public class Descriptions {
 		descriptions[3][1] = "There is an ocean to the east of you and compound to the west. You are in a forest and there is a road leading north and south of you. There is a pirate guarding the road ahead and an abandoned boat on the shore";
 		descriptions[3][2] = "There is an ocean to the east of you and compound to the west. You are exiting the forest. As you look around, you see a pirate patrolling the enterance to the compound.";
 		descriptions[3][3] = "There is an ocean to the east and south of you. There is a road leading north and west into the compound. There is a pirate sleeping by the enterance to the compound.";
-		
+
 		//memory messages
 		GameState.past[0] = "\nYour memory starts to clear up. You recall being on an expensive boat...at night time.\n";
 		GameState.past[1] = "\nYou remember working as a waiter at a luxurious party on a boat. Then you heard something...but not sure what.\n";
@@ -49,10 +50,10 @@ public class Descriptions {
 		items.put("axe","An axe in pristene condition. I should equip this to have a better chance against the pirates.");
 		items.put("poisoned liqour","Poisoned liqour I can offer to some pirates.");
 		items.put("hands","Better put them back on.");
-		items.put("robe","Cheap robe, like the ones you find in a hotel bathroom."); 
+		items.put("robe","Cheap robe, like the ones you find in a hotel bathroom.");
 		items.put("sword","Sword from the Medieval times. This will do some damage.");
 		items.put("armor","Nice set of medieval armor. This will reduce the damage taken by a half.");
-		
+
 
 		items.put("bandage","A bandage that I can use to heal myself.");
 		items.put("engine part","An engine part that can be used to fix Dimitri's boat.");
@@ -73,20 +74,20 @@ public class Descriptions {
 		sights.put("forest","Pretty dense forest, nothing to see here besides that hidden chest.");
 		sights.put("chest","A hidden chest that pirates havent discovered on their own little island.");
 		sights.put("boat","Dimitri's boat. It requires an engine part and keys that pirates have stolen. If I can somehow get fix this boat me and Dimitri can both leave!");
-		
+
 		sights.put("abandoned boat","This boat appears to be abandoned but the engine checks out. I wonder if this part will work for Dimitri");
 		sights.put("flag","I dont know what flag that is...but it is not welcoming.");
 		sights.put("apple tree","A nice healthy looking apple tree. Good source of food!");
 		sights.put("shed","A shed resembling one in ordinary farms.");
-		
-		
+
+
 
 
 	}
 	public String getDesc(int i, int j){
 		return descriptions[i][j];
 	}
-	public String getDescItem(String itemName) {	
+	public String getDescItem(String itemName) {
 		return items.get(itemName);
 	}
 

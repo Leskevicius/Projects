@@ -33,6 +33,9 @@ public class Processor {
 				System.out.println(GameState.past[pastMessage]);
 				pastMessage++;
 			}
+			if (words[0].equals("help")) {
+				newAction.setOutput(Descriptions.help);
+			}
 			if (words[0].equals("cheats")) {
 				newAction.cheats(words);
 			}
@@ -65,7 +68,7 @@ public class Processor {
 			if (words[0].equals("inventory")) {
 				newAction.printInventory();
 			}
-			if (words[0].equals("examine")) {				
+			if (words[0].equals("examine")) {
 				examine(newAction,words);
 			}
 			if (words[0].equals("talk") && words[1].equals("to")) {
@@ -167,16 +170,16 @@ public class Processor {
 	public void pickUp(Action newAction, String[] words) {
 		if (words[1].equals("pirate") && words[2].equals("outfit")) {
 			if (GameState.currentLocation.locationContains("pirate outfit")) {
-				newAction.addToInventory("pirate outfit"); 
+				newAction.addToInventory("pirate outfit");
 			}
 		}
 		else if (words[1].equals("water") && words[2].equals("bottle")) {
 			if (GameState.currentLocation.locationContains("water bottle")) {
-				newAction.addToInventory("water bottle"); 
+				newAction.addToInventory("water bottle");
 			}
 		}
 		else if (GameState.currentLocation.locationContains(words[1])) {
-			newAction.addToInventory(words[1]); 
+			newAction.addToInventory(words[1]);
 		}
  		else {
 			newAction.wrongInput();
@@ -232,7 +235,7 @@ public class Processor {
 					newAction.setNewLocation(GameState.getCurrentLocation().move("south"));
 					countRememberPast++;
 				}
-			}	
+			}
 			else if (GameState.currentLocation.getX() == 3 && GameState.currentLocation.getY() == 1) {
 				if (!GameState.pirateClothes) {
 					newAction.noPirateClothes("south");
@@ -241,7 +244,7 @@ public class Processor {
 					newAction.setNewLocation(GameState.getCurrentLocation().move("south"));
 					countRememberPast++;
 				}
-			}	
+			}
 			else if (GameState.currentLocation.getX() == 3 && GameState.currentLocation.getY() == 2) {
 				if (!GameState.pirateClothes) {
 					newAction.noPirateClothes("south");
@@ -250,7 +253,7 @@ public class Processor {
 					newAction.setNewLocation(GameState.getCurrentLocation().move("south"));
 					countRememberPast++;
 				}
-			}			
+			}
 			else {
 				newAction.setNewLocation(GameState.getCurrentLocation().move("south"));
 				countRememberPast++;
